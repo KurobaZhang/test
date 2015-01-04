@@ -1,0 +1,13 @@
+public/
+.sass-cache
+.DS_Store
+vendor/
+icons.scss
+Linnerfile
+.idea/
+_variables.scss
+jiggly.json
+mewtwo.tar.gz
+vendor_modules/
+components_vendor/
+vendor/
