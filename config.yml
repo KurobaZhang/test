@@ -80,3 +80,9 @@ bundles:
   "bootstrap.js":
     version: "master"
     url: "http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.js"
+  essage.js:
+    version: master
+    url: https://raw.githubusercontent.com/sofish/essage/master/src/essage.js
+  essage.css:
+    version: master
+    url: https://raw.githubusercontent.com/sofish/essage/master/src/essage.css

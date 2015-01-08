@@ -7,4 +7,5 @@ module.exports = ->
       type: "POST"
       data: $("#login-form").serialize()
       success: (data)->
+        window.location.href = "/index"
 

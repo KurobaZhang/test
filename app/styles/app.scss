@@ -1,0 +1,26 @@
+.sidebar{
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #244676;
+  ul{
+    padding: 0;
+    li{
+      list-style-type: none;
+      a{
+        display: inline-block;
+        width: 100%;
+        padding: 20px 40px;
+        font-size: 16px;
+        line-height: 30px;
+        color: white;
+      }
+      &.active{
+        background-color: white;
+        a{
+          color: #717171;
+        }
+      }
+    }
+  }
+}
