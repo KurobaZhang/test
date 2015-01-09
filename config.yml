@@ -13,6 +13,7 @@ groups:
     order:
       - "vendor/jquery.js"
       - "vendor/require_definition.js"
+      - "vendor/handlebars.js"
       - "..."
       - "app/scripts/app.coffee"
   styles:
@@ -86,3 +87,4 @@ bundles:
   essage.css:
     version: master
     url: https://raw.githubusercontent.com/sofish/essage/master/src/essage.css
+

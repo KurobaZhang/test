@@ -1,9 +1,16 @@
 require "extras/ajax"
+require "extras/handlebars"
 module.exports = ->
+  ceilingTemplate = Handlebars.templates["common/templates/ceiling"]
+  userIndexTemplate = Handlebars.templates["common/templates/user_sidebar"]
 
-  if $(".ceiling").length > 0
+  if $(".ceiling-outer").length > 0
     $.ajax
       url: "/api/users/detail_info"
       type: "GET"
       success: (data)->
-        $(".ceiling .user-name").text(data.nickName)
+        $(".ceiling-outer").append(ceilingTemplate({data: data}))
+
+
+  if $(".user-sidebar").length > 0
+    $(".user-sidebar").append(userIndexTemplate)
