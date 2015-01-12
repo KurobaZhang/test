@@ -1,3 +1,15 @@
+body{
+  background-color: #d4d4d4;
+  color: #717171;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style-type: none;
+  }
+}
 .sidebar{
   position: fixed;
   width: 200px;
@@ -14,6 +26,8 @@
         font-size: 16px;
         line-height: 30px;
         color: white;
+        text-decoration:none;
+        list-style-type: none;
       }
       &.active{
         background-color: white;
@@ -32,4 +46,18 @@
   #user-profile-form{
     width: 400px;
   }
+  form{
+    h2{
+      text-align: center;
+    }
+  }
+}
+
+.main-container{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.user-background{
+  background-color: white;
 }

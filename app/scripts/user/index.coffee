@@ -16,4 +16,7 @@ module.exports = ->
       contentType: "application/json"
       data: JSON.stringify($("#user-profile-form").serializeObject())
       success: (data)->
-        console.log data
+        Essage.show {
+          message: "个人信息修改成功"
+          status: 'success'
+        },2000

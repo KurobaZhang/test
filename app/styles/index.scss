@@ -1,18 +1,62 @@
 .ceiling{
+  background-color: #323436;
   color: white;
   border-radius: 0;
   margin-bottom: 0;
+  border: 0;
+  min-height: 80px;
   .main{
     width: 1200px;
     margin: 0 auto;
   }
   .user-info{
-    line-height: 55px;
+    line-height: 80px;
   }
   ul{
     float: right;
+    min-height: 50px;
     li{
       list-style-type: none;
+      a{
+        height: 80px;
+        padding: 0 25px;
+        line-height: 80px;
+      }
+    }
+  }
+  .navbar-nav>.active>a,
+  .navbar-nav>.active>a:hover,
+  .navbar-nav>.active>a:focus{
+    background-color: #fb5240;
+  }
+}
+
+.coupon{
+  width: 285px;
+  float: left;
+  margin-right: 20px;
+  margin-top: 20px;
+  &.last{
+    margin-right: 0
+  }
+  .coupon-image{
+    height: 200px;
+    overflow: hidden;
+  }
+  .coupon-info{
+    height: 120px;
+    width: 100%;
+    background-color: white;
+    ul{
+      li{
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px dashed #eee;
+        padding: 0 20px;
+        &.last{
+          border-bottom: 0;
+        }
+      }
     }
   }
 }

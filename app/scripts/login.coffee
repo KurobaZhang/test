@@ -1,5 +1,8 @@
 module.exports = ->
 
+  ###
+    登录
+  ###
   $("#login-form").on "submit", (evt)->
     evt.preventDefault()
     $.ajax
