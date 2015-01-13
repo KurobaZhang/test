@@ -1,0 +1,103 @@
+{{#if data}}
+  {{#equals data.status 0}}
+    <div class="settle-status">运营正在审核您的申请，请耐心等待</div>
+
+  {{else}}
+    {{#equals data.status 1}}
+      <div class="settle-status">您的申请已经过运营审核通过</div>
+
+    {{else}}
+      {{#equals data.status "-1"}}店铺申请未通过{{/equals}}
+      {{#equals data.status "-2"}}店铺已冻结{{/equals}}
+      <form class="form-horizontal user-form" role="form" id="settle-form">
+        <h2>商家入驻申请</h2>
+        <br />
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-4 control-label">店铺名</label>
+          <div class="col-sm-8">
+            <input type="hidden" name="id" id="user-id" />
+            <input type="text" class="form-control" name="shopName" id="user-name" placeholder="请输入店铺名">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-4 control-label">固定电话</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="telephone" id="real-name" placeholder="请输入店铺固定电话">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-4 control-label">店铺手机</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="phone" id="real-name" placeholder="请输入店铺联系电话">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-4 control-label">店铺地址</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="address" id="user-phone" placeholder="输入店铺地址">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-4 control-label">店铺LOGO</label>
+          <div class="col-sm-8">
+            <img src="" alt="" width="100" height="100">
+            <input type="hidden" class="form-control" name="imageUrl">
+            <button class="file-input-wrapper btn btn-warning">
+              <span>上传</span><input type="file" name="file" style="left: -196.5px; top: 10px;">
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-8">
+            <button type="submit" class="btn btn-default btn-lg btn-primary">提交申请</button>
+          </div>
+        </div>
+      </form>
+    {{/equals}}
+  {{/equals}}
+{{else}}
+  <form class="form-horizontal user-form" role="form" id="settle-form">
+    <h2>商家入驻申请</h2>
+    <br />
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-4 control-label">店铺名</label>
+      <div class="col-sm-8">
+        <input type="hidden" name="id" id="user-id" />
+        <input type="text" class="form-control" name="shopName" id="user-name" placeholder="请输入店铺名">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-4 control-label">固定电话</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" name="telephone" id="real-name" placeholder="请输入店铺固定电话">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-4 control-label">店铺手机</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" name="phone" id="real-name" placeholder="请输入店铺联系电话">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-4 control-label">店铺地址</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" name="address" id="user-phone" placeholder="输入店铺地址">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-4 control-label">店铺LOGO</label>
+      <div class="col-sm-8">
+        <img src="" alt="" width="100" height="100">
+        <input type="hidden" class="form-control" name="imageUrl">
+        <button class="file-input-wrapper btn btn-warning">
+          <span>上传</span><input type="file" name="file" style="left: -196.5px; top: 10px;">
+        </button>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-8">
+        <button type="submit" class="btn btn-default btn-lg btn-primary">提交申请</button>
+      </div>
+    </div>
+  </form>
+{{/if}}

@@ -1,6 +1,12 @@
 Handlebars.registerHelper 'pp', (json, options) ->
   JSON.stringify(json)
 
+Handlebars.registerHelper 'equals', (a, b, options) ->
+  if a.toString() is b.toString()
+    options.fn(this)
+  else
+    options.inverse(this)
+
 Handlebars.registerHelper 'add', (a,b, options) ->
   a + b
 

@@ -2,20 +2,51 @@ require "extras/ajax"
 require "extras/handlebars"
 module.exports = ->
   ceilingTemplate = Handlebars.templates["common/templates/ceiling"]
-  userIndexTemplate = Handlebars.templates["common/templates/user_sidebar"]
+  userSidebarTemplate = Handlebars.templates["common/templates/user_sidebar"]
+  sellerSidebarTemplate = Handlebars.templates["common/templates/seller_sidebar"]
+  ceilingType =
+    "/index": 1
+    "/user/index": 2
+    "/user/settle": 2
+    "/user/orders": 2
+    "/user/password": 2
+    "/seller/index": 3
+    "/seller/coupons": 3
 
   ###
     若有吊顶外部div则渲染吊顶组件
   ###
   if $(".ceiling-outer").length > 0
+    ceilingType = ceilingType[window.location.pathname]
+    $(".ceiling-outer").append(ceilingTemplate({ceilingType}))
     $.ajax
       url: "/api/users/detail_info"
       type: "GET"
       success: (data)->
-        $(".ceiling-outer").append(ceilingTemplate({data: data}))
+        $(".user-name").text(data.nickName)
+        $(".ceiling .seller-nav").removeClass("hide") if data.type is 2
+        $(".ceiling").data("user", data)
 
   ###
     若有用户侧边栏外部div则渲染
   ###
   if $(".user-sidebar").length > 0
-    $(".user-sidebar").append(userIndexTemplate)
+    $(".user-sidebar").append(userSidebarTemplate())
+
+  ###
+    若有商家侧边栏外部div则渲染商家侧边栏
+  ###
+  if $(".seller-sidebar").length > 0
+    $(".seller-sidebar").append(sellerSidebarTemplate())
+
+  ###
+    上传图片
+  ###
+  $("input[name=file]").on "click", (evt)->
+    _this = @
+    $(@).fileupload
+      url: "/api/image"
+      type: "POST"
+      dataType: "json"
+      success: (data)=>
+        console.log data

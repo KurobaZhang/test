@@ -15,6 +15,9 @@ groups:
       - "vendor/require_definition.js"
       - "vendor/handlebars.js"
       - "..."
+      - vendor/jquery.ui.widget.js
+      - vendor/jquery.iframe-transport.js
+      - vendor/jquery.fileupload.js
       - "app/scripts/app.coffee"
   styles:
     paths:
