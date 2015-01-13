@@ -1,7 +1,6 @@
 public/
 .sass-cache
 .DS_Store
-vendor/
 icons.scss
 Linnerfile
 .idea/
