@@ -44,9 +44,12 @@ module.exports = ->
   ###
   $("input[name=file]").on "click", (evt)->
     _this = @
+    exFileName = $("input[name=exFileName]").val() || ""
     $(@).fileupload
       url: "/api/image"
       type: "POST"
-      dataType: "json"
+      formData: {exFileName1: exFileName}
+      sequentialUploads: true
+      dataType: "html"
       success: (data)=>
         console.log data
