@@ -42,8 +42,9 @@ module.exports = ->
   ###
     上传图片
   ###
-  $("input[name=file]").on "click", (evt)->
+  $(document).on "click", "input[name=file]", (evt)->
     _this = @
+    imageInput = $(_this).parent().siblings("input.imageUrl")
     exFileName = $("input[name=exFileName]").val() || ""
     $(@).fileupload
       url: "/api/image"
@@ -52,4 +53,4 @@ module.exports = ->
       sequentialUploads: true
       dataType: "html"
       success: (data)=>
-        console.log data
+        $(imageInput).val(data).siblings("img").attr("src", data)

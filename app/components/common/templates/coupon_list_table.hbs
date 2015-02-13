@@ -1,0 +1,9 @@
+{{#each data.data}}
+  <tr>
+    <td><img src="{{mainImage}}" width="60" height="60" alt=""> {{name}}</td>
+    <td>{{discountInfo}}</td>
+    <td>{{#equals status 0}}未上架{{/equals}}{{#equals status 1}}上架{{/equals}}{{#equals status "-1"}}下架{{/equals}}</td>
+    <td>{{formatDate createdAt}}</td>
+    <td>{{#equals status 0}} <button class="btn"></button>{{/equals}}</td>
+  </tr>
+{{/each}}

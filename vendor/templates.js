@@ -23,20 +23,77 @@ function program1(depth0,data) {
   buffer += " hide\"><a href=\"/seller/index\">商家中心</a></li>\n    </ul>\n  </div>\n</nav>\n";
   return buffer;
   });
-templates["common/templates/coupon"] = template(function (Handlebars,depth0,helpers,partials,data) {
+templates["common/templates/coupon_list_table"] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, self=this;
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
+  var buffer = "", stack1, helper, options;
+  buffer += "\n  <tr>\n    <td><img src=\"";
+  if (helper = helpers.mainImage) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.mainImage); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\" width=\"60\" height=\"60\" alt=\"\"> ";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</td>\n    <td>";
+  if (helper = helpers.discountInfo) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.discountInfo); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</td>\n    <td>";
+  stack1 = (helper = helpers.equals || (depth0 && depth0.equals),options={hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data},helper ? helper.call(depth0, (depth0 && depth0.status), 0, options) : helperMissing.call(depth0, "equals", (depth0 && depth0.status), 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  stack1 = (helper = helpers.equals || (depth0 && depth0.equals),options={hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data},helper ? helper.call(depth0, (depth0 && depth0.status), 1, options) : helperMissing.call(depth0, "equals", (depth0 && depth0.status), 1, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  stack1 = (helper = helpers.equals || (depth0 && depth0.equals),options={hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data},helper ? helper.call(depth0, (depth0 && depth0.status), "-1", options) : helperMissing.call(depth0, "equals", (depth0 && depth0.status), "-1", options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</td>\n    <td>"
+    + escapeExpression((helper = helpers.formatDate || (depth0 && depth0.formatDate),options={hash:{},data:data},helper ? helper.call(depth0, (depth0 && depth0.createdAt), options) : helperMissing.call(depth0, "formatDate", (depth0 && depth0.createdAt), options)))
+    + "</td>\n    <td>";
+  stack1 = (helper = helpers.equals || (depth0 && depth0.equals),options={hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data},helper ? helper.call(depth0, (depth0 && depth0.status), 0, options) : helperMissing.call(depth0, "equals", (depth0 && depth0.status), 0, options));
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</td>\n  </tr>\n";
+  return buffer;
+  }
+function program2(depth0,data) {
   
-  return "\n  <div class=\"coupon\">\n\n  </div>\n";
+  
+  return "未上架";
   }
 
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.data), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+function program4(depth0,data) {
+  
+  
+  return "上架";
+  }
+
+function program6(depth0,data) {
+  
+  
+  return "下架";
+  }
+
+function program8(depth0,data) {
+  
+  
+  return " <button class=\"btn\"></button>";
+  }
+
+  stack1 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.data)),stack1 == null || stack1 === false ? stack1 : stack1.data), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";
+  return buffer;
+  });
+templates["common/templates/edit_coupon"] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "";
+
+
+  buffer += "<div class=\"modal\" id=\"couponModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 class=\"modal-title\" id=\"exampleModalLabel\">优惠活动定义</h4>\n      </div>\n      <form class=\"form-horizontal modal-form coupon-form\" role=\"form\" id=\"coupon-form\">\n        <div class=\"modal-body\">\n          <div class=\"form-group\">\n            <label for=\"inputEmail3\" class=\"col-sm-4 control-label\">名字</label>\n            <div class=\"col-sm-8\">\n              \n              <input type=\"text\" class=\"form-control\" name=\"name\" id=\"coupon-name\" placeholder=\"请输入名字\">\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"inputPassword3\" class=\"col-sm-4 control-label\">优惠内容</label>\n            <div class=\"col-sm-8\">\n              <input type=\"text\" class=\"form-control\" name=\"discountInfo\" placeholder=\"请输入券优惠内容\">\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"inputPassword3\" class=\"col-sm-4 control-label\">活动图片</label>\n            <div class=\"col-sm-8\">\n              <img src=\"\" alt=\"\" id=\"image-url\" width=\"100\" height=\"100\">\n              <input type=\"hidden\" class=\"exFileName\" />\n              <input type=\"hidden\" class=\"form-control imageUrl\" name=\"mainImage\">\n              <button class=\"file-input-wrapper btn btn-warning\" type=\"button\">\n                <span>上传</span><input type=\"file\" name=\"file\" style=\"left: -196.5px; top: 10px;\" multiple>\n              </button>\n            </div>\n          </div>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"submit\" class=\"btn btn-primary\">确定</button>\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">取消</button>\n        </div>\n      </div>\n    </form>\n  </div>\n</div>\n";
   return buffer;
   });
 templates["common/templates/seller_sidebar"] = template(function (Handlebars,depth0,helpers,partials,data) {
