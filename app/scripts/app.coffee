@@ -12,6 +12,7 @@ module.exports = ->
     "/user/password": 2
     "/seller/index": 3
     "/seller/coupons": 3
+    "/seller/orders": 3
 
   ###
     若有吊顶外部div则渲染吊顶组件

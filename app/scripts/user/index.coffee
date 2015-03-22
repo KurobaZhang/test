@@ -8,6 +8,7 @@ module.exports = ->
       $("#user-phone").val(data.phone)
       $("#user-id").val(data.id)
 
+  #提交用户
   $("#user-profile-form").on "submit", (evt)->
     evt.preventDefault()
     $.ajax

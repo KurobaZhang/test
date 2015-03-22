@@ -1,0 +1,9 @@
+{{#each data.data}}
+  <tr>
+   <td>{{businessName}}</td>
+   <td>{{shopName}}</td>
+   <td>{{#equals status 0}}初始{{/equals}}{{#equals status 1}}使用成功{{/equals}}{{#equals status "-2"}}失败{{/equals}}</td>
+   <td>{{formatDate createdAt}}</td>
+   <td>{{#equals status 0}}等待商家审批{{/equals}}{{#equals status "-2"}}审批不通过{{/equals}}{{#equals status 1}}交易完成{{/equals}}</td>
+  </tr>
+{{/each}}

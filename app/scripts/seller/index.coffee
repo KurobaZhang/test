@@ -1,5 +1,4 @@
 module.exports = ->
-
   ###
     获取店铺信息
   ###
@@ -32,3 +31,4 @@ module.exports = ->
           message: "店铺信息修改成功"
           status: 'success'
         },2000
+

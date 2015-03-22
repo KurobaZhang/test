@@ -1,9 +1,14 @@
-{{#each data.data}}
+{{#each data}}
   <tr>
     <td><img src="{{mainImage}}" width="60" height="60" alt=""> {{name}}</td>
     <td>{{discountInfo}}</td>
-    <td>{{#equals status 0}}未上架{{/equals}}{{#equals status 1}}上架{{/equals}}{{#equals status "-1"}}下架{{/equals}}</td>
+    <td class="coupon-status">{{#equals status 0}}未上架{{/equals}}{{#equals status 1}}上架{{/equals}}{{#equals status "-1"}}下架{{/equals}}</td>
     <td>{{formatDate createdAt}}</td>
-    <td>{{#equals status 0}} <button class="btn"></button>{{/equals}}</td>
+    <td class="coupon-operator">
+      {{#equals status 0}}<button class="btn btn-primary js-change-status" data-status="1" data-origin-status="0" data-id="{{id}}">上架</button>{{/equals}}
+      {{#equals status "1"}}<button class="btn btn-primary js-change-status" data-status="-1" data-origin-status="1" data-id="{{id}}">下架</button>{{/equals}}
+      {{#equals status "-1"}}<button class="btn btn-primary js-change-status" data-status="1" data-origin-status="-1" data-id="{{id}}">上架</button>{{/equals}}
+      <button class="btn btn-danger js-delete-coupon" data-id="{{id}}">删除</button>
+    </td>
   </tr>
 {{/each}}

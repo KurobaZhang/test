@@ -1,0 +1,14 @@
+{{#each data.data}}
+  <div class="coupon" name="{{pp this}}">
+    <div class="coupon-image">
+      <img src="{{mainImage}}" width="285" alt="" />
+    </div>
+    <div class="coupon-info">
+      <ul>
+        <li>{{discountInfo}}</li>
+        <li>管理员 <span class="shop-name">{{shopName}}</span></li>
+        <li class="last">发布于 {{formatDate createdAt "day"}} <button type="button" class="btn btn-info js-order" data-id="{{id}}">申请</button></li>
+      </ul>
+    </div>
+  </div>
+{{/each}}

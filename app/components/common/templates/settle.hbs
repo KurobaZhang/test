@@ -1,11 +1,9 @@
 {{#if data}}
   {{#equals data.status 0}}
-    <div class="settle-status">运营正在审核您的申请，请耐心等待</div>
-
+    <p class="bg-info" style="margin: 20px 20px 0 0;">运营正在审核您的申请，请耐心等待</p>
   {{else}}
     {{#equals data.status 1}}
-      <div class="settle-status">您的申请已经过运营审核通过</div>
-
+      <p class="bg-info" style="margin: 20px 20px 0 0;">您的申请已经过运营审核通过</p>
     {{else}}
       {{#equals data.status "-1"}}店铺申请未通过{{/equals}}
       {{#equals data.status "-2"}}店铺已冻结{{/equals}}

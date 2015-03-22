@@ -4,17 +4,30 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>余人自娱-首页</title>
+    <title>余人自娱-用户订单列表</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/styles/vendor.css">
     <link rel="stylesheet" href="/assets/styles/app.css">
   </head>
-  <body>
+  <body class="user-background">
     <div class="ceiling-outer"></div>
-    <div class="main-container">
-      <div class="coupons">
+    <div class="user-sidebar"></div>
+    <div class="user-container">
+      <h2>订单管理</h2>
+      <table class="table" id="buyer-order-table">
+        <thead>
+          <tr>
+            <th>优惠名</th>
+            <th>商家名</th>
+            <th>状态</th>
+            <th>订单创建时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      </div>
+        </tbody>
+      </table>
     </div>
     <!--[if lt IE 7]>
         <p class="browsehappy">您正使用<strong>过时</strong>的浏览器，因此您可能体验不到最好的效果,请点击<a href="http://browsehappy.com/">这里</a> 去升级您的浏览器</p>
@@ -23,7 +36,8 @@
     <script src="/assets/scripts/vendor.js"></script>
     <script src="/assets/scripts/app.js"></script>
     <script>require("app")()</script>
-    <script>require("index")()</script>
+    <script>require("user/index")()</script>
+    <script>require("user/orders")()</script>
   </body>
   <!-- Powered by zhang -->
 </html>
